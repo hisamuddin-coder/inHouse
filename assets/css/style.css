@@ -374,3 +374,150 @@ h1 span {
     width: 100%;
   }
 }
+/*========================== PROPERTY SECTION ============================*/
+.section-pd {
+  padding: 5rem 0;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  width: calc((100% / 3) - 20px);
+  background-color: purple;
+  position: relative;
+}
+.card:first-of-type::before {
+  content: "Featured";
+  background-color: #ea7234;
+  color: #fff;
+  font-size: 13px;
+  padding: 4px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.card:first-of-type::after {
+  content: "";
+  border: 12px solid;
+  border-color: transparent transparent transparent #ea7234;
+  position: absolute;
+  left: 78px;
+  top: 0;
+  transform: translateY(-50%);
+}
+.card .top {
+  position: relative;
+  background: red;
+}
+.card .top::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 187, 175, 0.829);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 400ms;
+  opacity: 0;
+}
+.card .top:after {
+  content: "View Property";
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+}
+.card .top:hover::before {
+  opacity: 1;
+}
+.card .top:hover::after {
+  opacity: 1;
+}
+.card .top img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+.card .top span {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: white;
+  font-size: 20px;
+}
+.top span i {
+  margin-left: 5px;
+}
+.card .bottom {
+  padding: 20px 15px;
+  position: relative;
+}
+.card:not(:last-of-type) .bottom:before {
+  content: "Hot";
+  background-color: #ea723d;
+  color: white;
+  font-size: 11px;
+  padding: 4px 7px;
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  z-index: 1;
+}
+.card .bottom h3 {
+  font-size: 15px;
+}
+.card .bottom p {
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #777;
+}
+
+.card .bottom .advants {
+  display: flex;
+}
+
+.card .bottom .advants > div {
+  margin-right: 15px;
+}
+.card .bottom .advants > div span {
+  font-size: 12px;
+  font-weight: bold;
+}
+.card .bottom .advants > div > div i {
+  color: #777;
+  font-size: 22px;
+}
+.card .bottom .advants > div > div > span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.card .bottom .advants > div > div > span > span {
+  font-weight: #777;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.card .bottom .price {
+  margin-top: 20px;
+}
+.card .bottom .price span:first-of-type {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card .bottom .price span:last-of-type {
+  color: #3eaba1;
+  font-size: 22px;
+}
