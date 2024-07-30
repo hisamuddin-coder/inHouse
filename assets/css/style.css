@@ -1,0 +1,240 @@
+/*========================== FONTS ============================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&display=swap");
+/*========================== GLOBAL STYLE ============================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #343a40;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  line-height: 1.2;
+}
+img {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+/*========================== NAVBAR ============================*/
+.nav-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  padding: 0 2rem;
+  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3); */
+}
+.nav-toggle,
+.toggle-menu-ellipsis {
+  display: none;
+}
+/*== Logo ==*/
+.logo {
+  display: inline-block;
+  color: #343a40;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-right: 0.1em solid #134c88;
+  border-bottom: 0.1em solid #134c88;
+  padding: 0.1em 0.5em 0.1em 0;
+}
+.logo span {
+  color: #134c88;
+  font-size: 1.3em;
+}
+/*== Top Links ==*/
+.top-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.top-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.top-link-icon {
+  color: #424242;
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.top-link a,
+.top-link address {
+  font-size: 0.875rem;
+  color: #424242;
+}
+.top-link a:hover,
+.top-link address:hover {
+  color: #010101;
+}
+.btn {
+  color: #424242;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid currentColor;
+  padding: 1em 2.5em;
+  border-radius: 2.5px;
+  background-color: transparent;
+  transition: all 300ms ease;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #134c88;
+  border-color: #134c88;
+}
+/*== Links Container ==*/
+.links-container {
+  background-color: #134c88;
+  padding: 1.5rem 2rem;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.nav-link {
+  color: #f1f1f1;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+}
+.nav-link::before {
+  content: "";
+  width: 100%;
+  height: 1.25px;
+  background-color: #ffc107;
+  position: absolute;
+  bottom: -5px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 300ms ease;
+}
+.nav-link.active {
+  color: #ffc107;
+}
+.nav-link.active.nav-link::before {
+  transform: scaleX(1);
+}
+.nav-link:hover {
+  color: #ffc107;
+}
+.nav-link:hover.nav-link::before {
+  transform: scaleX(1);
+}
+@media screen and (max-width: 992px) {
+  .logo {
+    font-size: 1.25rem;
+  }
+  .top-links {
+    gap: 1rem;
+  }
+  .top-link-icon {
+    font-size: 0.875rem;
+  }
+  .top-link a,
+  .top-link address {
+    font-size: 0.75rem;
+  }
+  .btn {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+  }
+  .logo {
+    flex: 1;
+  }
+  .top-links-container {
+    position: absolute;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+    right: 0;
+    top: 80px;
+    height: 0;
+    overflow: hidden;
+    transition: all 400ms ease;
+  }
+  .top-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+  .links-container {
+    position: absolute;
+    padding: 0;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+    top: 80px;
+    width: 60%;
+    height: 0;
+    overflow: hidden;
+    transition: all 300ms ease;
+  }
+  .nav-links {
+    all: unset;
+  }
+  .nav-link {
+    color: #424242;
+    display: block;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #424242;
+  }
+  .nav-link::before {
+    display: none;
+  }
+  .nav-link.active,
+  .nav-link:hover {
+    color: #fff;
+    background: #343a40;
+  }
+  .btn {
+    color: #fff;
+    background-color: #134c88;
+    border-color: #134c88;
+  }
+  .nav-toggle,
+  .toggle-menu-ellipsis {
+    display: block;
+    color: #424242;
+    border: none;
+    font-size: 1.75rem;
+    background: transparent;
+  }
+  .nav-toggle {
+    margin-right: 16px;
+  }
+  .nav-brand {
+    flex: 1;
+  }
+}
