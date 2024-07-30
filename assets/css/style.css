@@ -109,7 +109,18 @@ a {
 /*== Links Container ==*/
 .links-container {
   background-color: #134c88;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80px;
+  background-color: #134c88;
+  background-image: linear-gradient(
+    135deg,
+    #134c88 0%,
+    #257ad4 50%,
+    #53a3f9 100%
+  );
 }
 .nav-links {
   display: flex;
@@ -242,7 +253,7 @@ a {
 .carousel-container {
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 80px);
 }
 .carousel-slides {
   display: flex;
@@ -250,34 +261,42 @@ a {
 }
 .corousel-slide {
   min-width: 100%;
-  background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(red, #134c88);
+  background-color: #134c88;
+  background-image: linear-gradient(
+    135deg,
+    #134c88 0%,
+    #9599e2 50%,
+    #ffffff 100%
+  );
+
   background-size: cover;
 }
 .slide {
-  width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 80px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 }
 h1 {
-  color: #343a40;
+  color: #f3f3f3;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1;
 }
 h1 span {
   display: block;
-  color: #343a40;
-  font-size: 4rem;
+  color: #f3f3f3;
+  font-size: 1.4em;
   font-weight: 500;
   margin-bottom: 10px;
 }
 .slide p {
-  color: #343a40;
+  color: #f3f3f3;
   font-size: 14px;
-  width: 40%;
+  font-weight: 300;
+  width: 50%;
   margin-bottom: 10px;
 }
 .btn {
@@ -286,29 +305,72 @@ h1 span {
   font-weight: 500;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  background-color: blue;
-  border: 2px solid blue;
+  background-color: #134c88;
+  border: 2px solid #134c88;
   border-radius: 2.5px;
   transition: all 400ms ease;
 }
 .btn:hover {
-  color: blue;
+  color: #134c88;
   background-color: transparent;
   border-color: currentColor;
 }
 .slide-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=600);
+    url("/assets/img/slider-01.jpg");
 }
+
 .slide-2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://images.pexels.com/photos/3244846/pexels-photo-3244846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    url("/assets/img/slider-02.jpg");
 }
 .slide-3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&cs=tinysrgb&w=600);
+    url("/assets/img/slider-03.jpg");
 }
 .slide-4 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://images.pexels.com/photos/32870/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); /*need to change pictures*/
+    url("/assets/img/slider-04.jpg");
+}
+.dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dot {
+  display: block;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  z-index: 9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.dot.active {
+  background-color: #7d7c7c;
+  transform: scale(1.25);
+}
+@media screen and (max-width: 992px) {
+  .slide p {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .slide p {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 548px) {
+  .slide p {
+    width: 100%;
+  }
 }

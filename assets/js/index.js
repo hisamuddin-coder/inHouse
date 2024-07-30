@@ -25,3 +25,37 @@ navToggleEllipsis.addEventListener("click", function () {
     topLinksContainer.style.height = 0;
   }
 });
+
+let slideIndex = 0;
+let timeout;
+const slides = document.querySelectorAll(".corousel-slide");
+const btnDots = document.querySelectorAll(".dot");
+
+function showSlides() {
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
+
+  btnDots.forEach((btnDot) => {
+    btnDot.classList.remove("active");
+  });
+
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  } else if (slideIndex < 1) {
+    slideIndex = slides.length;
+  }
+  slides[slideIndex - 1].style.display = "flex";
+  btnDots[slideIndex - 1].classList.add("active");
+  timeout = setTimeout(showSlides, 3000);
+}
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides();
+}
+btnDots.forEach((dot, index) => {
+  clearTimeout(timeout);
+  dot.addEventListener("click", () => currentSlide(index));
+});
+showSlides();
