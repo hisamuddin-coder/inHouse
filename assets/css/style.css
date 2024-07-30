@@ -238,3 +238,77 @@ a {
     flex: 1;
   }
 }
+/*========================== HERO SECTION ============================*/
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 200px);
+}
+.carousel-slides {
+  display: flex;
+  transition: all 500ms ease;
+}
+.corousel-slide {
+  min-width: 100%;
+  background-image: linear-gradient(red, blue);
+  background-size: cover;
+}
+.slide {
+  width: 100%;
+  height: calc(100vh - 200px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+h1 {
+  color: #343a40;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+h1 span {
+  display: block;
+  color: #343a40;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.slide p {
+  color: #343a40;
+  font-size: 14px;
+  width: 40%;
+  margin-bottom: 10px;
+}
+.btn {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: blue;
+  border: 2px solid blue;
+  border-radius: 2.5px;
+  transition: all 400ms ease;
+}
+.btn:hover {
+  color: blue;
+  background-color: transparent;
+  border-color: currentColor;
+}
+.slide-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.slide-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/3244846/pexels-photo-3244846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+}
+.slide-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/3613236/pexels-photo-3613236.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.slide-4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/32870/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); /*need to change pictures*/
+}
