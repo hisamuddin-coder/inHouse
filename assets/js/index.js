@@ -77,6 +77,7 @@ const navToggleEllipsis = document.querySelector(".toggle-menu-ellipsis");
 const topLinksContainer = document.querySelector(".top-links-container");
 const topLinks = document.querySelector(".top-links");
 
+// NAVIGATION
 navToggle.addEventListener("click", function () {
   const containerHeight = linksContainer.getBoundingClientRect().height;
   if (containerHeight === 0) {
@@ -97,7 +98,7 @@ navToggleEllipsis.addEventListener("click", function () {
     topLinksContainer.style.height = 0;
   }
 });
-
+// HERO SLIDER
 let slideIndex = 0;
 let timeout;
 const slides = document.querySelectorAll(".corousel-slide");
