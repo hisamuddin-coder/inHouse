@@ -378,13 +378,23 @@ h1 span {
 .section-pd {
   padding: 5rem 0;
 }
-.section-title {
-  color: #424242;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.section-header {
   margin-bottom: 2.5rem;
   text-align: center;
+}
+.section-header h2 {
+  color: #424242;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.section-header p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 75%;
+  margin: auto;
 }
 #property .btn-container {
   margin-top: 2.5rem;
@@ -548,5 +558,126 @@ h1 span {
 @media screen and (max-width: 768px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+}
+/*========================== SECTION-01 ============================*/
+.section-bg {
+  background-color: rgb(226, 226, 226);
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.item > span {
+  color: #424242;
+  font-size: 1.75rem;
+}
+.item > div h4 {
+  color: #010101;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.item > div p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
+}
+/*========================== RESIDENTIAL PROPERTY SECTION ============================*/
+#residential .btn-container {
+  text-align: center;
+}
+#residential .items {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 3.25rem;
+}
+#residential figure img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+#residential figure figcaption h4 {
+  color: #343a40;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  #residential .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  #residential .items {
+    grid-template-columns: 1fr;
+  }
+}
+/*========================== OUR TEAM SECTION ============================*/
+#team .items {
+  display: gird;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+#team .items figure {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+#team .items figure img {
+  width: 170px;
+  aspect-ratio: 1/1;
+  object-position: 0 2px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+#team .items figure figcaption h4 {
+  color: #424242;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+#team .items figure figcaption span {
+  display: block;
+  color: #424242;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+#team .items figure figcaption p {
+  display: block;
+  color: #777;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+#team .btn-container {
+  text-align: center;
+}
+@media screen and (max-width: 992px) {
+  #team .items {
+    padding: 0 5rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  #team .items {
+    padding: 0;
   }
 }
