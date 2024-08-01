@@ -181,4 +181,25 @@ function displayCards(items) {
   displayCard = displayCard.join("");
   cardContainer.innerHTML = displayCard;
 }
-// TESTIMONIALS SLIDER
+// ========= STATS ==========
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".stat-count");
+  const speed = 200;
+
+  counters.forEach((counter) => {
+    function updateCount() {
+      const id = +counter.getAttribute("data-id");
+      const count = +counter.innerText;
+
+      const increment = +id / speed;
+
+      if (count < id) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = id;
+      }
+    }
+    updateCount();
+  });
+});
