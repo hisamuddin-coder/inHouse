@@ -22,7 +22,7 @@
     <header id="header">
       <!--NAVBAR-->
       <nav id="nav">
-        <div class="nav-header">
+        <div class="nav-header flex">
           <!--Nav Toggle-->
           <button class="nav-toggle">
             <i class="fa-solid fa-bars"></i>
@@ -39,8 +39,8 @@
           </button>
           <!---->
           <div class="top-links-container">
-            <ul class="top-links">
-              <li class="top-link">
+            <ul class="top-links flex">
+              <li class="top-link flex">
                 <div class="top-link-icon">
                   <i class="fa-solid fa-phone"></i>
                 </div>
@@ -53,7 +53,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="top-link">
+              <li class="top-link flex">
                 <div class="top-link-icon">
                   <i class="fa-solid fa-location-dot"></i>
                 </div>
@@ -66,17 +66,17 @@
                 </ul>
               </li>
               <li class="top-link">
-                <button type="button" class="btn btn-outline nav-btn">
-                  Request a call
+                <button type="button" class="btn btn-outline">
+                  <span>Request a call</span>
                 </button>
               </li>
             </ul>
           </div>
         </div>
         <!--nav-links-container-->
-        <div class="links-container">
+        <div class="links-container flex">
           <!--nav-links-->
-          <ul class="nav-links">
+          <ul class="nav-links flex">
             <li>
               <a href="#" class="nav-link active">Home</a>
             </li>
@@ -107,7 +107,9 @@
                   that meets all your needs. Start your journey to homeownership
                   now and find the property you've always dreamed of.
                 </p>
-                <button class="btn">Explore More</button>
+                <button type="button" class="btn">
+                  <span>Explore More</span>
+                </button>
               </div>
             </div>
             <!--Slide-->
@@ -121,7 +123,9 @@
                   sought-after neighborhoods. Experience luxury living with
                   top-of-the-line amenities and breathtaking views.
                 </p>
-                <button class="btn">Explore More</button>
+                <button type="button" class="btn">
+                  <span>Explore More</span>
+                </button>
               </div>
             </div>
             <!--Slide-->
@@ -135,7 +139,9 @@
                   a home that fits your budget without compromising on quality.
                   Start your search for an affordable, comfortable home today
                 </p>
-                <button class="btn">Explore More</button>
+                <button type="button" class="btn">
+                  <span>Explore More</span>
+                </button>
               </div>
             </div>
             <!--Slide-->
@@ -150,7 +156,9 @@
                   hidden gems and unique opportunities tailored to your
                   preferences.
                 </p>
-                <button class="btn">Explore More</button>
+                <button type="button" class="btn">
+                  <span>Explore More</span>
+                </button>
               </div>
             </div>
             <!--Dots Btn Container-->
@@ -169,7 +177,7 @@
           <div class="section-header">
             <h2>Popular Properties</h2>
           </div>
-          <div class="cards">
+          <div class="cards grid">
             <!-- Card -->
             <!-- <div class="card">
               <div class="top">
@@ -210,15 +218,17 @@
             </div> -->
           </div>
           <div class="btn-container">
-            <button class="btn">See More Properties</button>
+            <button type="button" class="btn">
+              <span>See More Properties</span>
+            </button>
           </div>
         </div>
       </section>
       <!--------|| SECTION-01 ||---------->
       <section id="section-01" class="section-pd section-bg">
         <div class="container">
-          <div class="items">
-            <div class="item">
+          <div class="items grid">
+            <div class="item flex">
               <span><i class="fa-regular fa-user"></i></span>
               <div>
                 <h4>Qualified Employees</h4>
@@ -228,7 +238,7 @@
                 </p>
               </div>
             </div>
-            <div class="item">
+            <div class="item flex">
               <span><i class="fa-regular fa-comment"></i></span>
               <div>
                 <h4>Free Consultations</h4>
@@ -239,7 +249,7 @@
                 </p>
               </div>
             </div>
-            <div class="item">
+            <div class="item flex">
               <span><i class="fa-regular fa-star"></i></span>
               <div>
                 <h4>100% Guaranteed</h4>
@@ -264,7 +274,7 @@
               dolorem magnam.
             </p>
           </div>
-          <div class="items">
+          <div class="items grid">
             <figure>
               <img
                 src="/assets/img/residential-01.jpeg"
@@ -295,7 +305,9 @@
             </figure>
           </div>
           <div class="btn-container">
-            <button class="btn">See More Properties</button>
+            <button type="button" class="btn btn-outline">
+              <span>See More Properties</span>
+            </button>
           </div>
         </div>
       </section>
@@ -309,7 +321,7 @@
               asperiores itaque ut. Illum maxime
             </p>
           </div>
-          <div class="items">
+          <div class="items grid">
             <figure>
               <img src="/assets/img/team-01.jpeg" alt="Single Family Homes" />
               <figcaption>
@@ -360,9 +372,23 @@
             </figure>
           </div>
           <div class="btn-container">
-            <button class="btn">See More Properties</button>
+            <button type="button" class="btn btn-outline">
+              <span>See More Properties</span>
+            </button>
           </div>
         </div>
+      </section>
+      <!--------|| OFFERS ||---------->
+      <section id="offers" class="offers section-pd">
+        <h3>BEST OFFERS</h3>
+        <h5>of September</h5>
+        <p>
+          With a variety of accountants available at our company, you can always
+          choose one that fits your corporate requirements.
+        </p>
+        <button type="button" class="btn">
+          <span>Read More</span>
+        </button>
       </section>
       <!--------|| TESTIMONIALS ||---------->
       <section id="testimonials" class="section-pd">
@@ -534,5 +560,103 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="container">
+        <section class="main-footer">
+          <div class="footer-wrapper">
+            <div class="col">
+              <h6>About Us</h6>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+                  enim assumenda, aliquid nesciunt explicabo totam, consequuntur
+                  debitis hic aliquam odit ipsum iure temporibus et, placeat
+                  nulla? Necessitatibus aut quis cupiditate?
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <h6>Recent Blog Posts</h6>
+              <div>
+                <div class="blog-post">
+                  <span class="text-highlight"
+                    >Real Estate Guide: 7 Important Tips for Buying a Home</span
+                  >
+                  <span class="text-muted">by Mike Barnes 2 days ago</span>
+                </div>
+                <div class="blog-post">
+                  <span class="text-highlight"
+                    >Single-Family Homes as a Housing Option for Young
+                    Families</span
+                  >
+                  <span class="text-muted">by Mike Barnes 2 days ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <h6>Gallery</h6>
+              <div class="gallery-post">
+                <img src="/assets/img/property-01.jpeg" alt="" />
+                <img src="/assets/img/property-02.jpeg" alt="" />
+                <img src="/assets/img/property-03.jpeg" alt="" />
+                <img src="/assets/img/property-04.jpeg" alt="" />
+                <img src="/assets/img/property-05.jpeg" alt="" />
+                <img src="/assets/img/property-06.jpeg" alt="" />
+                <img src="/assets/img/property-07.jpeg" alt="" />
+                <img src="/assets/img/property-08.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="footer-nav">
+            <ul class="footer-nav-links">
+              <li><a href="#" class="footer-nav-link">Home</a></li>
+              <li><a href="#" class="footer-nav-link">About</a></li>
+              <li><a href="#" class="footer-nav-link">Properties</a></li>
+              <li><a href="#" class="footer-nav-link">Blog</a></li>
+              <li><a href="#" class="footer-nav-link">Contacts</a></li>
+            </ul>
+            <ul class="footer-nav-icons">
+              <li>
+                <a href="#" class="footer-nav-icon"
+                  ><span><i class="fa-brands fa-facebook-f"></i></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="footer-nav-icon"
+                  ><span><i class="fa-brands fa-x-twitter"></i></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="footer-nav-icon"
+                  ><span><i class="fa-brands fa-instagram"></i></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="footer-nav-icon"
+                  ><span><i class="fa-brands fa-google"></i></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="footer-nav-icon"
+                  ><span><i class="fa-brands fa-linkedin-in"></i></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="site-footer">
+          <!--Logo-->
+          <div class="nav-brand">
+            <a href="#index.html">
+              <span class="logo">in<span>House</span></span>
+            </a>
+          </div>
+          <p class="copyright">
+            © 2024. All Rights Reserved. Design by TemplateMonster
+          </p>
+        </section>
+      </div>
+    </footer>
   </body>
 </html>

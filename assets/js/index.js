@@ -181,3 +181,4 @@ function displayCards(items) {
   displayCard = displayCard.join("");
   cardContainer.innerHTML = displayCard;
 }
+// TESTIMONIALS SLIDER
