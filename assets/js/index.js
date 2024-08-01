@@ -71,11 +71,11 @@ const data = [
 ];
 
 const navToggle = document.querySelector(".nav-toggle");
-const linksContainer = document.querySelector(".links-container");
+const linksContainer = document.querySelector(".nav-links-container");
 const navLinks = document.querySelector(".nav-links");
 const navToggleEllipsis = document.querySelector(".toggle-menu-ellipsis");
 const topLinksContainer = document.querySelector(".top-links-container");
-const topLinks = document.querySelector(".top-links");
+const topLinks = document.querySelector(".top-nav-links");
 
 // NAVIGATION
 navToggle.addEventListener("click", function () {

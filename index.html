@@ -18,78 +18,64 @@
     <script defer src="assets/js/index.js"></script>
   </head>
   <body>
-    <!--------|| HEADER ||---------->
-    <header id="header">
-      <!--NAVBAR-->
-      <nav id="nav">
-        <div class="nav-header flex">
-          <!--Nav Toggle-->
+    <header>
+      <nav id="nav" class="nav">
+        <div class="top-nav container flex">
+          <!-- NAV-Toggle -->
           <button class="nav-toggle">
             <i class="fa-solid fa-bars"></i>
           </button>
           <!--Logo-->
           <div class="nav-brand">
-            <a href="#index.html">
-              <span class="logo">in<span>House</span></span>
+            <a href="#">
+              <span class="logo">in <span>House</span></span>
             </a>
           </div>
-          <!--toggle-menu-ellipsis-->
-          <button class="toggle-menu-ellipsis">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </button>
-          <!---->
+          <!--  top-links-container -->
           <div class="top-links-container">
-            <ul class="top-links flex">
-              <li class="top-link flex">
-                <div class="top-link-icon">
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <ul class="nav-top-links">
-                  <li>
-                    <a href="#" class="phone-no">00 000 000 00</a>
-                  </li>
-                  <li>
-                    <a href="#" class="phone-no">00 000 000 00</a>
-                  </li>
+            <ul class="top-nav-links flex">
+              <li class="top-nav-link flex">
+                <span class="top-link-icon"
+                  ><i class="fa-solid fa-phone"></i
+                ></span>
+                <ul class="top-nav-link-item">
+                  <li><a href="#">+91 000 0000 000</a></li>
+                  <li><a href="#">+91 000 0000 000</a></li>
                 </ul>
               </li>
-              <li class="top-link flex">
-                <div class="top-link-icon">
-                  <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <ul class="nav-top-links">
-                  <li>
-                    <address>
-                      2130 Fulton Street <br />San Diego, CA 94117-1080
-                    </address>
-                  </li>
+              <li class="top-nav-link flex">
+                <span class="top-link-icon"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></span>
+                <ul class="top-nav-link-item">
+                  <address>
+                    Rajiv Chowk, C.P. <br />New Delhi, Delhi 110001
+                  </address>
                 </ul>
               </li>
-              <li class="top-link">
+              <li>
                 <button type="button" class="btn btn-outline">
                   <span>Request a call</span>
                 </button>
               </li>
             </ul>
           </div>
+          <!--toggle-menu-ellipsis-->
+          <button class="toggle-menu-ellipsis">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </button>
         </div>
-        <!--nav-links-container-->
-        <div class="links-container flex">
-          <!--nav-links-->
-          <ul class="nav-links flex">
-            <li>
-              <a href="#" class="nav-link active">Home</a>
-            </li>
-            <li>
-              <a href="#about.html" class="nav-link">About Us</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link">Rent</a>
-            </li>
-            <li>
-              <a href="#contact.html" class="nav-link">Contacts</a>
-            </li>
-          </ul>
+        <div class="main-nav flex">
+          <div class="container">
+            <div class="nav-links-container">
+              <ul class="nav-links flex">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/about.html" class="nav-link">About Us</a></li>
+                <li><a href="#" class="nav-link">Rent</a></li>
+                <li><a href="#" class="nav-link">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -162,7 +148,7 @@
               </div>
             </div>
             <!--Dots Btn Container-->
-            <div class="dots">
+            <div class="dots flex">
               <span class="dot active"></span>
               <span class="dot"></span>
               <span class="dot"></span>

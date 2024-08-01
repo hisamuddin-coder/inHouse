@@ -1,43 +1,6 @@
 /*========================== FONTS ============================*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /*========================== VARIABLES ============================*/
-/* :root {
-  --clr-white: #fff;
-  --clr-gry: #777;
-  --clr-dark-gry: #343a40;
-  --blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
-  --gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
-} */
-
 :root {
   --clr-white: #fff;
   --clr-off-white: #f3f3f3;
@@ -45,14 +8,18 @@
   --clr-blue: #0d6efd;
   --clr-light-blue: #53a3f9;
   --clr-dark-blue: #134c88;
-  --clr-blue-transparent: rgba(37, 122, 212, 0.5);
-  --clr-light-blue-transparent: rgba(83, 163, 249, 0.5);
-  --clr-dark-blue-transparent: rgba(19, 76, 136, 0.5);
+  --clr-blue-transparent: rgba(37, 122, 212, 0.8);
+  --clr-light-blue-transparent: rgba(83, 163, 249, 0.8);
+  --clr-dark-blue-transparent: rgba(19, 76, 136, 0.8);
+  --clr-black-transparent: rgba(0, 0, 0, 0.5);
   --clr-black: #120f0f;
   --clr-gry: #434242;
   --clr-light-gry: #bbb;
   --clr-dark-gry: #232323;
 
+  --ff: "Montserrat", sans-serif;
+
+  /*BACKGROUND*/
   --bg: var(--clr-white);
   --bg-section: var(--clr-off-white);
   --bg-image: linear-gradient(
@@ -67,6 +34,11 @@
     var(--clr-blue-transparent) 50%,
     var(--clr-light-blue-transparent) 100%
   );
+  --bg-image-transparent-light: linear-gradient(
+    180deg,
+    var(--clr-black-transparent),
+    var(--clr-black-transparent)
+  );
 }
 /*========================== GLOBAL STYLE ============================*/
 *,
@@ -79,7 +51,7 @@
 body {
   color: var(--clr-gry);
   font-weight: 400;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--ff);
   background-color: var(--bg);
   line-height: 1.2;
 }
@@ -93,6 +65,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -124,7 +97,6 @@ a {
   text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
-
 .section-header p {
   color: #777;
   font-size: 14px;
@@ -188,17 +160,40 @@ a {
 .btn-outline span {
   color: #232323;
 }
-/*========================== NAVBAR ============================*/
-.nav-header {
-  height: 80px;
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  gap: 10px;
+}
+.dot {
+  display: block;
+  background-color: var(--bg);
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+}
+.dot.active {
+  transform: scale(1.25);
   background-color: var(--bg-section);
-  padding: 0 2rem;
+}
+/*========================== NAVBAR ============================*/
+/*============== NAVBAR ================*/
+#nav {
+  position: relative;
+  background-color: var(--bg-section);
+}
+.top-nav {
+  height: 80px;
 }
 .nav-toggle,
 .toggle-menu-ellipsis {
   display: none;
 }
-/*== Logo ==*/
+/*--- Logo --- */
 .logo {
   display: inline-block;
   color: var(--clr-gry);
@@ -212,11 +207,11 @@ a {
   color: var(--clr-blue);
   font-size: 1.3em;
 }
-/*== Top Links ==*/
-.top-links {
+/*--- top-links ---*/
+.top-nav-links {
   gap: 2rem;
 }
-.top-link {
+.top-nav-link {
   gap: 0.5rem;
 }
 .top-link-icon {
@@ -230,24 +225,23 @@ a {
   justify-content: center;
   border-radius: 50%;
 }
-.top-link a,
-.top-link address {
+.top-nav-link-item a,
+.top-nav-link-item address {
   font-size: 0.875rem;
   color: var(--clr-gry);
 }
-.top-link a:hover,
-.top-link address:hover {
+.top-nav-link-item a:hover,
+.top-nav-link-item address:hover {
   color: var(--clr-dark-gry);
 }
-/*== Links Container ==*/
-.links-container {
-  background-color: var(--clr-dark-blue);
-  padding: 0 2rem;
-  justify-content: flex-start;
-  height: 80px;
+/*--- main-nav ---*/
+.main-nav {
+  height: 70px;
   background-image: var(--bg-image);
+  justify-content: center;
 }
 .nav-links {
+  justify-content: flex-start;
   gap: 3rem;
 }
 .nav-link {
@@ -283,60 +277,68 @@ a {
   .logo {
     font-size: 1.25rem;
   }
-  .top-links {
+  .top-nav-links {
     gap: 1rem;
   }
   .top-link-icon {
     font-size: 0.875rem;
   }
-  .top-link a,
-  .top-link address {
+
+  .top-nav-link-item a,
+  .top-nav-link-item address {
     font-size: 0.75rem;
   }
   .btn {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 @media screen and (max-width: 768px) {
   .nav {
-    position: fixed;
-    width: 100%;
-    z-index: 9;
+    position: relative;
   }
-  .logo {
+  .nav-brand {
     flex: 1;
   }
   .top-links-container {
     position: absolute;
     background-color: var(--bg);
-    border-bottom-left-radius: 5px;
-    box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+    top: 100%;
     right: 0;
-    top: 80px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 5px;
     height: 0;
     overflow: hidden;
     transition: all 400ms ease;
+    z-index: 9;
   }
-  .top-links {
+  .top-nav-links {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
     padding: 2.5rem;
+    gap: 2rem;
   }
-  .links-container {
+  .main-nav {
+    all: unset;
+  }
+  .main-nav .container {
+    width: 100%;
+  }
+  .nav-links-container {
     position: absolute;
-    padding: 0;
-    height: calc(100vh - 60px);
-    background-color: var(--bg);
-    box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
-    top: 80px;
-    width: 60%;
+    left: 0;
+    top: 100%;
+    height: 100vh;
+    width: 50%;
+    background: var(--bg);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
     height: 0;
     overflow: hidden;
-    transition: all 300ms ease;
+    transition: all 400ms ease;
+    z-index: 9;
   }
   .nav-links {
     all: unset;
+    list-style: none;
   }
   .nav-link {
     color: var(--clr-gry);
@@ -412,46 +414,23 @@ h1 span {
 }
 
 .slide-1 {
-  background-image: var(--bg-image-transparent),
+  background-image: var(--bg-image-transparent-light),
     url("/assets/img/slider-01.jpg");
 }
 
 .slide-2 {
-  background-image: var(--bg-image-transparent),
+  background-image: var(--bg-image-transparent-light),
     url("/assets/img/slider-02.jpg");
 }
 .slide-3 {
-  background-image: var(--bg-image-transparent),
+  background-image: var(--bg-image-transparent-light),
     url("/assets/img/slider-03.jpg");
 }
 .slide-4 {
-  background-image: var(--bg-image-transparent),
+  background-image: var(--bg-image-transparent-light),
     url("/assets/img/slider-04.jpg");
 }
-.dots {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.dot {
-  display: block;
-  background-color: var(--bg);
-  width: 5px;
-  height: 5px;
-  z-index: 9;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 400ms ease;
-}
-.dot.active {
-  background-color: var(--bg-section);
-  transform: scale(1.25);
-}
+
 @media screen and (max-width: 992px) {
   .slide p {
     width: 60%;
@@ -811,31 +790,6 @@ h1 span {
 .profile-info span {
   font-size: 18px;
 }
-.dots {
-  margin-top: 20px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  background-color: var(--bg);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  display: block;
-}
-.dot.active {
-  background-color: var(--bg-section);
-}
-
 /*========================== FOOTER ============================*/
 footer {
   background-color: var(--clr-dark-gry);
