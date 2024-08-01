@@ -101,7 +101,7 @@ navToggleEllipsis.addEventListener("click", function () {
 // HERO SLIDER
 let slideIndex = 0;
 let timeout;
-const slides = document.querySelectorAll(".corousel-slide");
+const slides = document.querySelectorAll(".carousel-slide");
 const btnDots = document.querySelectorAll(".dot");
 
 function showSlides() {
